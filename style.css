@@ -1,11 +1,51 @@
+/*CSS reset
+(all the browsers will see the website in the same by setting every tag to 0 (the website will look the same on all browsers))
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+}
+
+
+/* -------------------------------------
+General styles (General Module, wrapping around the modules bellow)
+(the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
+*/
+
 #wrapper {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
 
+body {
+    font-size: 1.5rem;
+    font-family: Arial, sans-serif;
+}
+
+
+/* -------------------------------------
+Header styles (Main Module)
+(all the styles inside the < header > or < nav > tags)
+*/
+
 header {
     height: auto;
+    margin-top: 1rem;
 }
 
 #head {
@@ -26,6 +66,52 @@ img#smiley {
 
 img#logo {
     padding: 2rem;
-    margin-left: 5rem;
-    margin-bottom: 1.5rem;
+    margin-left: 7rem;
+    /*fix this resizing browser!!*/
 }
+
+
+/* -------------------------------------
+Content styles (Main Module)
+(all the styles inside the < sections > or < aside > tags)
+*/
+
+.main {
+    margin-top: 2rem;
+}
+
+#userWords {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    border: 1px solid gray;
+    font-size: 1.1rem;
+    margin: 1rem;
+    padding: 1rem 0rem 1rem 1rem;
+    max-width: 30%;
+}
+
+#finalStory {
+    margin-top: 2rem;
+}
+
+.finalWord {
+    background-color: lightcyan;
+}
+
+
+/* -------------------------------------
+Footer styles (Main Module)
+(all the styles inside the < footer > tag)
+*/
+
+
+/* -------------------------------------
+place all the desktop styles above this line
+Responsive styles
+(the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+place all the mobile tables styles bellow this line
+*/
