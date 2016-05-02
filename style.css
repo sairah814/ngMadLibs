@@ -1,0 +1,31 @@
+#wrapper {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    height: auto;
+}
+
+#head {
+    border: 2px solid black;
+}
+
+img.headimg {
+    display: inline-block;
+}
+
+img#smiley {
+    height: 10rem;
+    padding: 2rem 2rem 2rem 2rem;
+    border-right: 2px solid black;
+    margin-top: .5rem;
+    margin-bottom: .25rem;
+}
+
+img#logo {
+    padding: 2rem;
+    margin-left: 5rem;
+    margin-bottom: 1.5rem;
+}
