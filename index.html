@@ -20,7 +20,7 @@
                 <input type="radio" value="girl" name="gender" ng-click="gender.hisHer='her'; gender.himHer='her'; gender.heShe='she'" />Girl</p>
             <p>Provide the following words:</p>
             <div id=" userWords ">
-                <input type='text' ng-model='femaleName' placeholder="woman 's name" ng-init="femaleName='Julie '" />
+                <input type='text' ng-model='femaleName' placeholder="woman 's name" />
                 <input type='text ' ng-model='jobTitle ' placeholder="job title" ng-init="jobTitle='statistician '" />
                 <input type='text ' ng-model='tediousTask ' placeholder="tedious task" ng-init="tediousTask='data entry '" />
                 <input type='text ' ng-model='dirtyTask ' placeholder="dirty task" ng-init="dirtyTask='computer cleaning '" />
@@ -31,10 +31,10 @@
                 <input type='text ' ng-model='hugeNumber ' placeholder="huge number" ng-init="hugeNumber='100000 '" />
             </div>
             <div id="finalStory">
+                {{blank}}
                 <p><strong>{{femaleName}}</strong> was a {{jobTitle}} who loved technology. Although {{gender.heShe}} loved parts of {{gender.hisHer}} job, {{gender.heShe}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with {{gender.hisHer}} life mentor {{celebrity}} who told {{gender.hisHer}} to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so {{gender.heShe}} studied programming instead. </p>
                 <p>What a great decision! With {{gender.hisHer}} new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} times faster. </p>
             </div>
-            {{version}}
         </section>
     </div>
 

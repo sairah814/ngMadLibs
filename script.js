@@ -1,9 +1,9 @@
 angular.module('myApp', [])
-    .constant('BANANA', 1.4)
-    .run(function (BANANA, $rootScope) {
-        $rootScope.version = BANANA;
+    .constant('BLANK', "Add-A-Word")
+    .run(function (BLANK, $rootScope) {
+        $rootScope.femaleName = BLANK;
+        $rootScope.jobTitle = BLANK;
     })
-    .controller('MyCtrl', function (BANANA, $scope) {
-        $scope.version = BANANA;
+    .controller('MyCtrl', function ($scope) {
         $scope.gender = {};
     });
