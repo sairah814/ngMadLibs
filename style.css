@@ -76,7 +76,8 @@ Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
 
-.main {
+.main,
+.mainStory {
     margin-top: 2rem;
 }
 

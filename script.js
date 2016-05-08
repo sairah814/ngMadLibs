@@ -1,9 +1,11 @@
-angular.module('myApp', [])
-    .constant('BLANK', "Add-A-Word")
-    .run(function (BLANK, $rootScope) {
-        $rootScope.femaleName = BLANK;
-        $rootScope.jobTitle = BLANK;
-    })
+angular.module('myApp', ['ngMessages'])
     .controller('MyCtrl', function ($scope) {
+        $scope.data = {};
+        $scope.minvalue = 10;
         $scope.gender = {};
+        $scope.formHide = false;
+        //when submit change formHide
+        $scope.submit = function () {
+            $scope.formHide = true;
+        }
     });
