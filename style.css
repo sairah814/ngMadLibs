@@ -76,7 +76,8 @@ Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
 
-.main {
+.main,
+.mainStory {
     margin-top: 2rem;
 }
 
@@ -100,6 +101,23 @@ input {
 
 .finalWord {
     background-color: lightcyan;
+}
+
+button {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 1rem;
+}
+
+button:hover {
+    background-color: lightgrey;
+}
+
+.userInput {
+    font-style: italic;
+    color: cadetblue;
 }
 
 
