@@ -103,6 +103,23 @@ input {
     background-color: lightcyan;
 }
 
+button {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 1rem;
+}
+
+button:hover {
+    background-color: lightgrey;
+}
+
+.userInput {
+    font-style: italic;
+    color: cadetblue;
+}
+
 
 /* -------------------------------------
 Footer styles (Main Module)

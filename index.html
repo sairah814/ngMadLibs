@@ -15,21 +15,25 @@
                 <img class="headimg" id="logo" src="img/ng-mad-libs-logo.png" /></div>
         </header>
         <section class="main" ng-hide="formHide && madLibs.$valid">
-            <p id="gender-select">I'm a
-                <input type="radio" value="boy" name="gender" ng-click="gender.hisHer='his'; gender.himHer='him'; gender.heShe='he'" />Boy
-                <input type="radio" value="girl" name="gender" ng-click="gender.hisHer='her'; gender.himHer='her'; gender.heShe='she'" />Girl</p>
-            <p>Provide the following words:</p>
+
             <div id=" userWords ">
                 <form name="madLibs" novalidate ng-submit="submit()">
-                    <input type='text' name="femaleName" ng-model='femaleName' placeholder="woman 's name" required/>
-                    <input type='text ' name="jobTitle" ng-model='jobTitle ' placeholder="job title" required/>
-                    <input type='text ' name='tediousTask' ng-model='tediousTask ' placeholder="tedious task" required/>
-                    <input type='text ' name='dirtyTask' ng-model='dirtyTask ' placeholder="dirty task" required/>
-                    <input type='text ' name='celebrity' ng-model='celebrity ' placeholder="celebrity name" required/>
-                    <input type='text ' name='uselessSkill' ng-model='uselessSkill ' placeholder="useless skill" required/>
-                    <input type='text ' name="adjective" ng-model='adjective ' placeholder="adjective" required/>
-                    <input type='text ' name="obnoxiousCelebrity" ng-model='obnoxiousCelebrity ' placeholder="obnoxious celebrity" required/>
-                    <input type='number ' name="hugeNumber" ng-model='hugeNumber ' placeholder="huge number" ng-init="hugeNumber='100000 '" required min="{{minvalue}}" />
+                    <p id="gender-select">I'm a
+                        <input type="radio" value="boy" name="gender" ng-click="gender.hisHer='his'; gender.himHer='him'; gender.heShe='he'" required>Boy
+                        <input type="radio" value="girl" name="gender" ng-click="gender.hisHer='her'; gender.himHer='her'; gender.heShe='she'" required>Girl</p>
+                    <div ng-if="madLibs.$submitted" ng-messages="madLibs.gender-select.gender.$error">
+                        <div ng-message="required">Please select a gender</div>
+                    </div>
+                    <p>Provide the following words:</p>
+                    <input type='text' name="femaleName" ng-model='femaleName' placeholder="woman 's name" ng-init="test" required/>
+                    <input type='text ' ng-model='jobTitle ' placeholder="job title" ng-init="jobTitle='statistician '" required/>
+                    <input type='text ' ng-model='tediousTask ' placeholder="tedious task" ng-init="tediousTask='data entry '" required/>
+                    <input type='text ' ng-model='dirtyTask ' placeholder="dirty task" ng-init="dirtyTask='computer cleaning '" required/>
+                    <input type='text ' ng-model='celebrity ' placeholder="celebrity name" ng-init="celebrity='Steve Jobs '" required/>
+                    <input type='text ' ng-model='uselessSkill ' placeholder="useless skill" ng-init="uselessSkill='jumping '" required/>
+                    <input type='text ' ng-model='adjective ' placeholder="adjective" ng-init="adjective='funny '" required/>
+                    <input type='text ' ng-model='obnoxiousCelebrity ' placeholder="obnoxious celebrity" ng-init="obnoxiousCelebrity='Donald Trump '" />
+                    <input type='number ' name="hugeNumber" ng-model='hugeNumber ' placeholder="huge number" ng-init="hugeNumber=10000" required min="{{minvalue}}" />
                     <div class="allerrors" ng-if="madLibs.$submitted && madLibs.$invalid">The following are required:
                         <div ng-if="madLibs.$submitted" ng-messages="madLibs.femaleName.$error">
                             <span class="error" ng-message="required">female name</span>
@@ -67,9 +71,10 @@
         <section class="mainStory" ng-show="formHide && madLibs.$valid">
             <div id="finalStory">
 
-                <p><strong>{{femaleName}}</strong> was a {{jobTitle}} who loved technology. Although {{gender.heShe}} loved parts of {{gender.hisHer}} job, {{gender.heShe}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with {{gender.hisHer}} life mentor {{celebrity}} who told {{gender.hisHer}} to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so {{gender.heShe}} studied programming instead. </p>
-                <p>What a great decision! With {{gender.hisHer}} new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} times faster. </p>
+                <p><span class="userInput">{{femaleName}}</span> was a <span class="userInput">{{jobTitle}}</span> who loved technology. Although {{gender.heShe}} loved parts of {{gender.hisHer}} job, {{gender.heShe}} absolutely hated <span class="userInput">{{tediousTask}}</span> and <span class="userInput">{{dirtyTask}}</span>. So, <span class="userInput">{{femaleName}}</span> met with {{gender.hisHer}} life mentor <span class="userInput">{{celebrity}}</span> who told {{gender.hisHer}} to learn how to <span class="userInput">{{uselessSkill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="userInput">{{uselessSkill}}</span> so {{gender.heShe}} studied programming instead. </p>
+                <p>What a great decision! With {{gender.hisHer}} new skills, <span class="userInput">{{femaleName}}</span> built a(n) <span class="userInput">{{adjective}}</span> robot named <span class="userInput">{{obnoxiousCelebrity}}</span> that not only loved <span class="userInput">{{dirtyTask}}</span> but did it <span class="userInput">{{hugeNumber}}</span> times faster. </p>
             </div>
+            <button type="button" ng-click="reset()">Try Again</button>
         </section>
     </div>
 

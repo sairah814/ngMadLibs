@@ -8,4 +8,9 @@ angular.module('myApp', ['ngMessages'])
         $scope.submit = function () {
             $scope.formHide = true;
         }
+        $scope.reset = function () {
+            $scope.inputHide = false;
+            $scope.data = {};
+            location.reload();
+        }
     });
